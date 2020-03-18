@@ -1,6 +1,5 @@
-const Users = require("../users/userDb")
+const Users = require('../users/userDb')
 const Posts = require('../posts/postDb')
-
 
 const logger = (req, res, next) => {
 	const method = req.method
@@ -11,13 +10,11 @@ const logger = (req, res, next) => {
 }
 
 const validUserId = (req, res, next) => {
-  const { id } = req.params
-  Users 
-    .getById(id)
-    .then(user => {
-    user ? req.user : res.status(400).json({ message: 'Invalid User ID!' })
-	next()
-  })
+	const { id } = req.params
+	Users.getById(id).then(user => {
+		user ? req.user : res.status(400).json({ message: 'Invalid User ID!' })
+		next()
+	})
 }
 
 const validPostId = (req, res, next) => {
@@ -29,7 +26,7 @@ const validPostId = (req, res, next) => {
 }
 
 const validUser = (req, res, next) => {
- const {name}= req.body
+	const { name } = req.body
 	Object.entries(req.body).length === 0
 		? res.status(400).json({ message: 'No User Data' })
 		: !name
@@ -39,7 +36,7 @@ const validUser = (req, res, next) => {
 
 const validPost = (req, res, next) => {
 	const { text } = req.body
-	  Object.entries(req.body).length === 0
+	Object.entries(req.body).length === 0
 		? res.status(400).json({ message: 'No User Data' })
 		: !text
 		? res.status(400).json({ message: 'Missing required text field' })
@@ -48,7 +45,7 @@ const validPost = (req, res, next) => {
 module.exports = {
 	logger,
 	validUserId,
-  validUser,
-  validPostId,
-  validPost
+	validUser,
+	validPostId,
+	validPost,
 }
