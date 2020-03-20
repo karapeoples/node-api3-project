@@ -1,27 +1,59 @@
 .App {
   text-align: center;
+  color: #142014;
+  text-shadow:-.5px 0 paleturquoise, 0 .5px paleturquoise, .5px 0 paleturquoise, 0 -.5px paleturquoise;
+  height: 100vh;
+	max-width: 100%;
+	background-size: 100%;
+	background-attachment: fixed;
+	background-position: center;
+	overflow-x: auto;
+	overflow-y: auto;
+	background-image: url('./images/background.bmp');
 }
 
 .App-header {
-  background-color: palegreen;
+  background-color: #3b5d3b;
   min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  padding: .2%;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.links {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: paleturquoise;
+  border: double;
+  text-decoration: none;
+  margin-top: .2%;
+  padding-left:  1%;
+  padding-right: 1%;
+}
+.links:hover {
+  color: #3b5d3b;
+  text-shadow: -1px 0 paleturquoise, 0 1px paleturquoise, 1px 0 paleturquoise, 0 -1px paleturquoise;
+  border: double paleturquoise;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.card-container{
+  border: groove #3b5d3b; 
+  margin: 5%;
+  padding: 2%;
+  background: rgba(59, 93, 59, .5);
+}
+
+.comments{
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: paleturquoise;
+  border: double;
+  text-decoration: none;
+  margin-top: .2%;
+  padding-left:  1%;
+  padding-right: 1%;
 }
