@@ -45,7 +45,7 @@ router.delete('/:id', validUserId, (req, res) => {
 			user
 				? Users.remove(id).then(deleted => {
 						deleted ? res.status(200).json({ success: `User ${id} was deleted!`, info: user }) : null
-				  })
+				})
 				: null
 		})
 		.catch(err => {
