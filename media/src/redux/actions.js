@@ -1,4 +1,5 @@
 import axios from 'axios'
+const server = 'http://localhost:4994/api'
 
 export const GET_USERS = 'GET_USERS'
 export const SET_ERR = 'SET_ERR'
@@ -6,9 +7,10 @@ export const ADD_USER = 'ADD_USER'
 
 
 
+
 export const getTheUsers = () => dispatch => {
   axios
-    .get('http://localhost:4994/api/users')
+    .get(`${server}/users`)
     .then(res => {
       dispatch({type: GET_USERS, payload: res.data})
     })
@@ -20,7 +22,7 @@ export const getTheUsers = () => dispatch => {
 
 export const addUser = (addedUser) => dispatch => {
   axios
-			.post('http://localhost:4994/api/users', addedUser)
+			.post(`${server}/users`, addedUser)
 			.then(res => {
 				dispatch({ type: ADD_USER, payload: res.data })
 			})
@@ -29,3 +31,4 @@ export const addUser = (addedUser) => dispatch => {
 				dispatch({ type: SET_ERR, payload: 'You Were Not Added Try Again' })
 			})
 }
+

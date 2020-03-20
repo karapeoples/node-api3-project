@@ -4,20 +4,22 @@ import './App.css';
 import Welcome from './components/extras/Welcome'
 import UsersList from './components/users/UsersList'
 import AddForm from './components/extras/AddForm';
+import CommentsList from './components/comments/CommentsList';
 
 function App() {
   return (
 			<div className='App'>
-      <nav className='App-header'>
-          <Link to='/'>Home</Link>
+				<nav className='App-header'>
+					<Link to='/'>Home</Link>
 					<Link to='/create'>Become a User</Link>
 					<Link to='/users'>Users</Link>
-					
 				</nav>
 				<div>
 					<Route path='/create' component={AddForm} />
 					<Route path='/users' component={UsersList} />
 					<Route exact path='/' component={Welcome} />
+					<Route path='/user-journal/:id' component= {CommentsList} />
+						
 				</div>
 			</div>
 		)
