@@ -4,6 +4,7 @@ import axios from 'axios'
 import EditForm from '../extras/EditForm'
 import {useDispatch } from 'react-redux'
 import { getTheUsers } from '../../redux/actions'
+import { Button } from 'reactstrap'
 
 const UserCard = ({ name, id }) => {
 const server = 'http://localhost:4994/api'
@@ -41,35 +42,34 @@ const dispatch = useDispatch()
 			}
   
 	return (
-	<section>
-				{turn === true ? 
-					<div>
-						<EditForm
-							editItem={editItem}
-							setEditItem={setEditItem}
-							setTurn={setTurn}
+		<section className='card-container'>
+			{turn === true ? (
+				<div>
+					<EditForm editItem={editItem} setEditItem={setEditItem} setTurn={setTurn} />
+				</div>
+			) : (
+				<div>
+				<div style={{padding: '1%'}}>
+						<span style={{ margin: '1%' }}>
+						<Button size='sm' color='warning' onClick={handleClick}>
+								Edit
+							</Button>
+						</span>
 
-						/>
-					</div>
-				: 
-					<div>
-						<span>
-							<span>
-								<button onClick={handleClick}>Edit</button>
-							</span>
-
-							<span>
-								<button onClick={handleDelete}>X</button>
-							</span>
-          </span>
-          <Link to={`/user-journal/${id}`}>
-        <div>
-          <h1>{name}</h1>
-        </div>
-          </Link>
-          </div>
-        }
-      </section>
-  )
+						<span style={{ margin: '1%' }}>
+							<Button size='sm' color='danger' onClick={handleDelete}>
+								X
+							</Button>
+						</span>
+						</div>
+					<Link to={`/user-journal/${id}`}>
+						<div>
+							<h1 className='links'>{name}</h1>
+						</div>
+					</Link>
+				</div>
+			)}
+		</section>
+	)
 }
 export default UserCard

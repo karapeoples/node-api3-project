@@ -1,18 +1,12 @@
-import React, {useState} from 'react'
+import React from 'react'
 import axios from 'axios'
-import {useParams, useHistory}from 'react-router-dom'
+import {useParams}from 'react-router-dom'
 
 
 const CommentEdit = ({ editItem, setEditItem, setComments, comments, setTurn }) => {
 	const server = 'http://localhost:4994/api'
 	const { id } = useParams()
-	const history = useHistory()
-
-let reloadRoute = () => {
-	history.push({ pathname: '/empty' })
-	history.replace({ pathname: `/user-journal/${id}` })
-}
-
+	
 	const handleChange = e => {
 		setEditItem({ ...editItem, [e.target.name]: e.target.value })
 	}
@@ -25,10 +19,10 @@ let reloadRoute = () => {
 				console.log(res)
 				setEditItem(editItem)
 				setTurn(false)
-				reloadRoute()
+				return axios.get(`${server}/users/${id}/posts`)
 			})
 			.then(res => {
-				
+				setComments(res.data)
 			})
 			.catch(err => console.log('There is an error', err))
 	}
