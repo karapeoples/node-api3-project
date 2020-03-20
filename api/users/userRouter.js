@@ -78,7 +78,7 @@ router.post('/:id/posts', validUserId, validPost, (req, res) => {
 			} else {
 				let newPost = {
 					text,
-					user_id,
+					user_id, 
 				}
 
 				Posts.insert(newPost).then(post => {
