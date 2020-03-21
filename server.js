@@ -13,7 +13,7 @@ server.use(helmet(), logger, express.json(), cors())
 server.use('/api/users', userRouter)
 server.use('/api/posts', postRouter)
 
-server.get('/', (req, res) => {
+server.get('/', logger, (req, res) => {
 	res.send(`<h2>Let's write some middleware!</h2>`)
 })
 
