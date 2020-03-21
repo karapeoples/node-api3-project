@@ -7,7 +7,7 @@ import { getTheUsers } from '../../redux/actions'
 import { Button } from 'reactstrap'
 
 const UserCard = ({ name, id }) => {
-const server = 'http://localhost:4994/api'
+const server = 'https://me-journal.herokuapp.com/api'
 const [turn, setTurn] = useState(false)
 const [editItem, setEditItem] = useState({})
 const [info, setInfo] = useState([])

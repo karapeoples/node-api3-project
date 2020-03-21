@@ -13,6 +13,7 @@ const AddForm = () => {
 
 	const onSubmit = () => {
 		dispatch(addUser(info))
+		dispatch(getTheUsers())
 		history.push('/users')
 	}
 

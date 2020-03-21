@@ -1,5 +1,5 @@
 import axios from 'axios'
-const server = 'http://localhost:4994/api'
+const server = 'https://me-journal.herokuapp.com/api'
 
 export const GET_USERS = 'GET_USERS'
 export const SET_ERR = 'SET_ERR'

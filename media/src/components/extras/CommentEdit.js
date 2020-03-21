@@ -4,7 +4,7 @@ import {useParams}from 'react-router-dom'
 
 
 const CommentEdit = ({ editItem, setEditItem, setComments, comments, setTurn }) => {
-	const server = 'http://localhost:4994/api'
+	const server = 'https://me-journal.herokuapp.com/api'
 	const { id } = useParams()
 	
 	const handleChange = e => {

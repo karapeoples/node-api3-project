@@ -8,7 +8,7 @@ import {Row, Col} from 'reactstrap'
 const CommentsList = () => {
 	const [comments, setComments] = useState([])
 	const { id } = useParams()
-	const server = 'http://localhost:4994/api'
+	const server = 'https://me-journal.herokuapp.com/api'
 
 	useEffect(() => {
 		axios

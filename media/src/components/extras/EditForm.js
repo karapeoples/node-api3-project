@@ -6,7 +6,7 @@ import { getTheUsers } from '../../redux/actions'
 
 
 const EditForm = ({ editItem, setEditItem, setInfo, setTurn }) => {
-  const server = 'http://localhost:4994/api'
+  const server = 'https://me-journal.herokuapp.com/api'
   const dispatch = useDispatch()
 
 	const handleChange = e => {

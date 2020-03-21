@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import { Button } from 'reactstrap'
 
 const CommentCard = ({ text, postId, setComments, comments }) => {
-	const server = 'http://localhost:4994/api'
+	const server = 'https://me-journal.herokuapp.com/api'
 	const [turn, setTurn] = useState(false)
 	const [editItem, setEditItem] = useState({})
 	const { id } = useParams()
