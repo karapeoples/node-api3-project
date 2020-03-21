@@ -4,7 +4,6 @@ const Welcome = () => {
 	return (
 		<section className='card-container'>
 			<div className='comments'>
-				<h1>This One Kara</h1>
 			<h1>Welcome to MiddleEarth Mini-Journals</h1>
 			<ul>
 				<li>The Hobbits</li>

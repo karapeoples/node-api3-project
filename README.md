@@ -10,11 +10,12 @@
 
 1. FrontEnd Application
 
--
+- https://me-journal.kararpeoples.now.sh/
+
 
 2. Backend Application~~ RestAPI ~~ See Chart for Endpoints
 
--
+- https://me-journal.herokuapp.com
 
 |      Endpoints       | Method |               Other               |
 | :------------------: | :----: | :-------------------------------: |
