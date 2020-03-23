@@ -5,7 +5,7 @@ import {Button, Input, Form} from 'reactstrap'
 
 const CommentAdd = ({comments, setComments}) => {
   const [addedPost, setAddedPost] = useState({text: '' })
-  const server = 'http://localhost:4994/api'
+  const server = 'https://me-journal.herokuapp.com/api'
   const {id} = useParams()
 
   const onSubmit = e => {

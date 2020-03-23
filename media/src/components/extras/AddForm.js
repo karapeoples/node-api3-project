@@ -11,10 +11,13 @@ const AddForm = () => {
 	
 	
 
-	const onSubmit = () => {
+	const onSubmit = e => {
+		e.preventDefault()
 		dispatch(addUser(info))
+		setTimeout(()=>{
 		dispatch(getTheUsers())
-		history.push('/users')
+			history.push('/users')
+		}, 1500)
 	}
 
 	const onChange = e => {
